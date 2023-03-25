@@ -1,13 +1,13 @@
 module LIFO (
-    input clk,rst,write_e,read_e,
-    input [10:0] din,
-    output [10:0] dout
+    input clk,rst,write_e,read_e,  //clock, reset, write enable, read enable.
+    input [10:0] din,  //data input
+    output [10:0] dout // data output
     );
     
 
-    reg [3:0] addr;
-    reg [10:0] mem [15:0];
-    always@(posedge clk) 
+    reg [3:0] addr;  //  address register.
+    reg [10:0] mem [15:0];  // LIFO Memory register between 11 and 16 bits.
+    always@(posedge clk) // procedural statement in clock
     if(rst)
     addr <= 0;
     else begin
